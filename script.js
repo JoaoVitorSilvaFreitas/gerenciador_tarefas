@@ -53,8 +53,8 @@ function mostrarTarefa() {
     }
 
     listaCompleta.innerHTML = novaLi;
-
     localStorage.setItem('lista', JSON.stringify(listaDeItens));
+    formularioAdicionarTarefa.value = '';
 }
 
 function concluirTarefa(posicao) {
