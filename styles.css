@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+:root {
+    --cor-branca: #ffffff;
+    --cor-preta: #000000;
+    --cor-primaria:#308359;
+    --cor-secundaria:#438C5F;
+    --cor-tercearia:#487852;
+    --cor-hover:#B9FDCC;
+    --fonte-principal: "JetBrains Mono", monospace;
+}
+
+html {
+    font-family: var(--fonte-principal);
+}
+
+body {
+    background: url("./imagens/background.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.container_task {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #d1d1d1;
+    width: 500px;
+    border-radius: 8px;
+}
+
+.container_conteudo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.container_adiciona-task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container_adiciona-task input {
+    font-family: var(--fonte-principal);
+    padding: .8rem;
+    width: 60%;
+    border: none;
+    outline: 0;
+    border-radius: 8px;
+}
+
+.container_adiciona-task-botao {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-primaria);
+    border: none;
+    padding: .7rem;
+    outline: 0;
+    width: 7rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.container_adiciona-task-botao:active {
+    background-color: var(--cor-hover);
+}
+
+.container_adiciona-task .icone_lista {
+    font-size: 1rem;
+    color: var(--cor-tercearia);
+    cursor: pointer;
+    list-style: none;
+    padding: .6rem;
+    border-radius: 24px;
+}
+
+.dropdown-container{
+    position: relative;
+    display: flex;
+}
+
+.dropdown-container-botao {
+    background-color: transparent;
+    border: none;
+}
+.dropdown-container-task-lista{
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: 100%;
+    right: 0;   
+    min-width: 10rem;
+    padding: 1.6rem;
+}
+
+.dropdown-container-task-lista:hover,
+.dropdown-container-botao:hover ~ .dropdown-container-task-lista {
+    display: flex;
+    text-align: right;
+    flex-direction: column;
+    border-radius: 0.8rem;
+    border: 0.2rem solid var(--cor-tercearia);
+    background-color: var(--cor-hover);
+}
+
+.dropdown-container_adiciona-task-lista-button {
+    display: flex;
+    justify-content: space-around;
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.dropdown-container_adiciona-task-lista-button:hover {
+    background: var(--cor-primaria);
+}
+.lista_tasks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.linha_task {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: .8rem;
+    background-color: #f2f2f2;
+    box-shadow: 1px 4px 10px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    font-family: var(--fonte-principal);
+    margin-top: 1rem;
+}
+
+.linha_task:hover .img_task{
+    opacity: 1;
+}
+
+.img_task {
+    width: 25px;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.finalizada {
+    background-color: var(--cor-primaria);
+    text-decoration: line-through;
+}
+

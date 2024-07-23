@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de tarefas</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/reset.css">
+    <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/d0a6cd339c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section class="container_task">
+        <div class="container_conteudo">
+            <div class="container_adiciona-task">
+                <input class="container_adiciona-task-input" placeholder="O que tenho que fazer ?">
+                <button class="container_adiciona-task-botao">Adicionar</button>
+                <div class="dropdown-container">
+                    <button class="dropdown-container-botao">
+                        <i class="fa-solid fa-ellipsis-vertical icone_lista"></i>
+                    </button>
+                    <ul class="dropdown-container-task-lista">
+                        <li class="dropdown-container-task-lista-item">
+                            <button class="dropdown-container_adiciona-task-lista-button" id="botao_remover_todos">
+                                <i class="fa-solid fa-trash-can"></i>
+                                Apagar todos
+                            </button>
+                        </li>
+                    </ul>  
+                </div>
+                
+            </div>
+            
+            <ul class="lista_tasks">
+                
+            </ul>
+            
+        </div>
+       
+    </section>
+</body>
+
+</html>
