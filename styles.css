@@ -22,7 +22,6 @@ body {
     height: 100vh;
 }
 
-
 .container_task {
     display: flex;
     justify-content: space-between;
@@ -105,7 +104,7 @@ body {
     background-color: var(--cor-hover);
 }
 
-.dropdown-container_adiciona-task-lista-button {
+.dropdown-container_remove-task-lista-button {
     display: flex;
     justify-content: space-around;
     background-color: transparent;
@@ -116,9 +115,10 @@ body {
     padding: 1rem;
 }
 
-.dropdown-container_adiciona-task-lista-button:hover {
-    background: var(--cor-primaria);
+.dropdown-container_remove-task-lista-button:hover {
+    background-color: var(--cor-primaria);
 }
+
 .lista_tasks {
     display: flex;
     flex-direction: column;
@@ -153,7 +153,12 @@ body {
     transition: opacity 0.5s ease-in-out;
 }
 
+.img_edit {
+    margin-left: 0rem;
+}
+
 .finalizada {
     background-color: var(--cor-primaria);
     text-decoration: line-through;
 }
+

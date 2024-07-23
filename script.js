@@ -1,6 +1,7 @@
 const formularioAdicionarTarefa = document.querySelector('.container_adiciona-task-input');
 const botaoAdicionarTarefa = document.querySelector('.container_adiciona-task-botao');
 const botaoRemoverTodas = document.querySelector('#botao_remover_todos');
+const tarefasLocalStorage = localStorage.getItem('lista');
 const listaCompleta = document.querySelector('.lista_tasks');
 
 let listaDeItens = [];
@@ -19,6 +20,15 @@ function adicionarNovaTarefa() {
 
 }
 
+function editarTarefa(posicao){
+    const novaDescricao = prompt ("Qual o novo nome da tarefa ?");
+    console.log('nova descrição da tarefa: '+novaDescricao);
+    if(novaDescricao){
+        listaDeItens[posicao].tarefa = novaDescricao;
+        mostrarTarefa();
+    }
+}
+
 function mostrarTarefa() {
     let novaLi = '';
     
@@ -30,7 +40,11 @@ function mostrarTarefa() {
         <img class="img_task img-checked" src="./imagens/checked.png" alt="check-tarefa"
         onclick="concluirTarefa(${posicao})">
         <p class="item_task-nome-tarefa">${item.tarefa}</p>
+        <div>
+        <img class="img_task img-edit" src="./imagens/edit.png" alt="editar-tarefa"
+        onclick="editarTarefa(${posicao})">
         <img class="img_task img-delete" src="./imagens/trash.png" alt="deletar-tarefa" onclick="deletarTarefa(${posicao})">
+        </div>
         </li>
         `
         });
@@ -59,7 +73,6 @@ function deletarTudo(posicao) {
 }
 
 function recarregarTarefas() {
-    const tarefasLocalStorage = localStorage.getItem('lista');
     if (tarefasLocalStorage) {
         listaDeItens = JSON.parse(tarefasLocalStorage);
         mostrarTarefa();
@@ -67,5 +80,6 @@ function recarregarTarefas() {
 }
 
 recarregarTarefas();
+
 botaoAdicionarTarefa.addEventListener('click', adicionarNovaTarefa);
 botaoRemoverTodas.addEventListener('click', deletarTudo);
