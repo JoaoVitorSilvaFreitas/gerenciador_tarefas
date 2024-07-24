@@ -2,6 +2,7 @@
 const formularioAdicionarTarefa = document.querySelector('.container_adiciona-task-input');
 const botaoAdicionarTarefa = document.querySelector('.container_adiciona-task-botao');
 const botaoRemoverTodas = document.querySelector('#botao_remover_todos');
+const botaoRemoverCompleto = document.querySelector('#botao_remover_completo');
 const tarefasLocalStorage = localStorage.getItem('lista');
 const listaCompleta = document.querySelector('.lista_tasks');
 // Criação da lista variavel vázia.
@@ -86,10 +87,20 @@ function deletarTarefa(posicao) {
 }
 
 function deletarTudo(posicao) {
-    listaDeItens.splice(0, 25);
+    listaDeItens = [];
     mostrarTarefa();
 }
 
+//função para remover apenas os itens que estão marcados como completo
+function removerCompletas(posicao){
+    // a lista de itens filtra os que estão marcados como !concluida, nesse caso como o valor inicial do concluida é false... !item.concluida é igual a true
+    listaDeItens = listaDeItens.filter(item => !item.concluida);
+    mostrarTarefa();
+
+}
+
+botaoRemoverCompleto.addEventListener('click',removerCompletas);
+    
 //recarrega as tarefas sempre que a página for carregada, o if dentro, serve para garantir que a lista não está nula. Caso esteja, dará um erro na criação da linha dentro do array.
 function recarregarTarefas() {
     if (tarefasLocalStorage) {

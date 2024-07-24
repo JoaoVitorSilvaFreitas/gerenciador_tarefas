@@ -102,8 +102,15 @@ body {
     z-index: 10;
     top: 100%;
     right: 0;   
-    min-width: 10rem;
+    min-width: 15rem;
     padding: 1.6rem;
+}
+
+.dropdown-container-task-lista-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .dropdown-container-task-lista:hover,
@@ -117,9 +124,7 @@ body {
 }
 
 .dropdown-container_remove-task-lista-button {
-
     display: flex;
-    justify-content: space-around;
     align-items: center;
     background-color: transparent;
     width: 100%;
@@ -129,6 +134,7 @@ body {
     padding: .4rem;
     font-family: var(--fonte-principal);
     font-size: 1rem;
+    gap: 1rem;
 }
 
 .dropdown-container_remove-task-lista-button:hover {
@@ -158,6 +164,7 @@ body {
     margin-top: 1rem;
 }
 
+
 .linha_task:hover .img_task{
     opacity: 1;
 }
@@ -184,7 +191,6 @@ body {
 .item_task-nome-tarefa{
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
 .item_task-container-imagens-direita {
