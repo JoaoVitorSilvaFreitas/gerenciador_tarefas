@@ -157,8 +157,10 @@ body {
     margin-left: 0rem;
 }
 
-.finalizada {
+.marcada {
     background-color: var(--cor-primaria);
-    text-decoration: line-through;
 }
 
+.marcada .item_task-nome-tarefa {
+    text-decoration: line-through;
+}
