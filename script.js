@@ -20,7 +20,9 @@ function mostrarTarefa() {
         <li class="linha_task ${item.concluida && "marcada"}">
         <img class="img_task img-checked" src="./imagens/checked.png" alt="check-tarefa"
         onclick="concluirTarefa(${posicao})">
+        <div class="div_item_nome">
         <p class="item_task-nome-tarefa">${item.tarefa}</p>
+        </div>
         <div class="item_task-container-imagens-direita">
         <img class="img_task img-edit" src="./imagens/edit.png" alt="editar-tarefa"
         onclick="editarTarefa(${posicao})">
