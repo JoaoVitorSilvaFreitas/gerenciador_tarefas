@@ -50,6 +50,7 @@ body {
     border: none;
     outline: 0;
     border-radius: 8px;
+    font-size: 16px;
 }
 
 .container_botoes {
@@ -68,10 +69,13 @@ body {
     width: 14rem;
     border-radius: 8px;
     cursor: pointer;
+    font-size: 16px;
+    color: var(--cor-branca);
 }
 
 .container_adiciona-task-botao:active {
     background-color: var(--cor-hover);
+    color: var(--cor-preta);
 }
 
 .container_adiciona-task .icone_lista {
@@ -113,14 +117,18 @@ body {
 }
 
 .dropdown-container_remove-task-lista-button {
+
     display: flex;
     justify-content: space-around;
+    align-items: center;
     background-color: transparent;
     width: 100%;
     border: none;
     cursor: pointer;
     border-radius: 8px;
-    padding: 1rem;
+    padding: .4rem;
+    font-family: var(--fonte-principal);
+    font-size: 1rem;
 }
 
 .dropdown-container_remove-task-lista-button:hover {
